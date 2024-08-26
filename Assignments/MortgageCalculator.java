@@ -15,7 +15,7 @@ public class MortgageCalculator{
 
 	System.out.print("Enter the principal: ");
 	double principal = userInput.nextDouble();
-
+ 
 	System.out.print("Enter the annual rate: ");
 	double annualRate = userInput.nextDouble();
 
@@ -28,10 +28,10 @@ public class MortgageCalculator{
 
 	double powerOfRate = Math.pow((1 +monthlyPercentageRate), timeInMonths);
 
-	double mortgageValue = principal * monthlyPercentageRate * powerOfRate /(powerOfRate - 1);
+	double monthlyMortgagePayment = principal * monthlyPercentageRate * powerOfRate /(powerOfRate - 1);
 
 
-	System.out.print("The mortgage value after " + (int) timeInYears+ " years is $"+ mortgageValue);
+	System.out.print("Your monthly payment is $" + monthlyMortgagePayment);
 	
 
 	}
