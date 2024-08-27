@@ -2,33 +2,45 @@ import java.util.Scanner;
 
 public class Kata {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){ 
+
+	calculateAll();
+
+	}
+
+	public static void calculateAll() {
         Scanner userInput = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
+        System.out.print("Enter your primary number: ");
         int firstNumber = userInput.nextInt();
-	System.out.print("\nEnter a number: ");
+
+	System.out.print("\nEnter your secondary number: ");
 	int secondNumber = userInput.nextInt();
 
+	System.out.println();
 	factorialOf(firstNumber);
-
-	isPrimeNumber(firstNumber);
-	
-	isEven(firstNumber);
-
 	squareOf(firstNumber);
-
 	subtract (firstNumber, secondNumber);
-
+	divide (firstNumber, secondNumber);
 	System.out.println(isEven(firstNumber)); 
 	System.out.println(isPrimeNumber(firstNumber));
-	factorOf(firstNumber);
-    	}
+	System.out.println(isSquare(firstNumber));
+	System.out.println("The number of factors is: " + factorOf(firstNumber));
+	System.out.print(isNumberPalindrome(firstNumber));
+    	
+
+	}
+
+
+	public static boolean isSquare (int numberToCheck){
+	
+	int squareRoot = (int) Math.sqrt(numberToCheck);
+	return squareRoot * squareRoot == numberToCheck;
+	}
 
 
 
-
-public static long squareOf (int check){
+	public static long squareOf (int check){
 
 	long squareFunction = check * check;
 
@@ -36,15 +48,15 @@ public static long squareOf (int check){
 
 	return squareFunction;
 
-}
+	}
 
-public static int subtract (int numberOne, int numberTwo){
+	public static int subtract (int numberOne, int numberTwo){
 
 	if (numberOne < numberTwo) {
 	int temporaryNumber = numberOne;
 	numberOne = numberTwo;
 	numberTwo = temporaryNumber;
-	}
+				}
 
 	int subtractionFraction = numberOne - numberTwo;
 
@@ -52,11 +64,21 @@ public static int subtract (int numberOne, int numberTwo){
 
 	return subtractionFraction;
 
-}
+	}
 
 
+	public static float divide (int numberOne, int numberTwo){
+
+	if (numberTwo != 0 ) { int quotient = numberOne/numberTwo;
+
+	System.out.println("The quotient is " + quotient);
+
+	return quotient;
+	}
+	else return 0;
 
 
+	}
 
 	public static boolean isEven(int evenNumber){
 
@@ -80,12 +102,6 @@ public static int subtract (int numberOne, int numberTwo){
 
 	}
 
-	    	
-
-
-
-
-
 	public static boolean isPrimeNumber (int numberCheck){
 	int primefactors = factorOf(numberCheck);
 	if (primefactors == 2) return true;  
@@ -101,9 +117,26 @@ public static int subtract (int numberOne, int numberTwo){
             if (numberChecker % count == 0) counter++; 
             
         }
+	
 	return counter;
 	} 
 
+	public static boolean isNumberPalindrome(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+        
+        while (number != 0) {
+            int extractedValue = number % 10;
+            reversedNumber = reversedNumber * 10 + extractedValue;
+            number /= 10;
+        }
+        if (originalNumber == reversedNumber) {
+          return originalNumber == reversedNumber;         
+        } else {
+            return originalNumber == reversedNumber;
+        }
+
+	}
 
 
 
