@@ -4,6 +4,12 @@ public class MultiplicationTable{
 
 	public static void main(String... args){
 
+	multiplication();	
+
+	}
+	
+	public static void multiplication() {
+
 	Scanner inputCollector = new Scanner(System.in);
 
 	System.out.print("Enter number of choice: ");
@@ -18,10 +24,8 @@ public class MultiplicationTable{
 
 	product = count*number;
 	
-	System.out.println("|" + number + " * " + count + " = " + product + "|");
+	System.out.println("|" + number + " * " + count + " = " + product + "|");  
 	}
-
-  
 	}
 
 }
