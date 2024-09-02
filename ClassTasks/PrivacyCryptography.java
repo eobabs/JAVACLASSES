@@ -7,7 +7,7 @@ public class PrivacyCryptography{
 
 	Scanner encrypt = new Scanner(System.in);
 		
-	System.out.print("Enter a four digit integer: ");
+	System.out.print("\nEnter a four digit integer: ");
 	int code = encrypt.nextInt();
 
 	int digitA = code/1000;
@@ -22,7 +22,7 @@ public class PrivacyCryptography{
 
 	int encryptedCode = (1000 * newCodeC) + (100 * newCodeD) + (10 * newCodeA) + newCodeB;
 
-	System.out.printf("Your four digit integer is %d and your encrypted code is %d", code, encryptedCode);
+	System.out.printf("%nYour four digit integer is %d and your encrypted code is %d %n", code, encryptedCode);
 
 
 
