@@ -7,7 +7,7 @@ public class BackToSenderLogistics{
 	payTheRider();
 
 	}
-	
+		
 	public static double processPaymentTypeOne(int ordersFulfilled) {
 
 	double grossPay = (ordersFulfilled * 160) + 5000 ;
