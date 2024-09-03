@@ -24,6 +24,20 @@ public class PrivacyCryptography{
 
 	System.out.printf("%nYour four digit integer is %d and your encrypted code is %d %n", code, encryptedCode);
 
+	//To decrypt the code
+
+	int reverseNewCodeA = newCodeA + 3;
+	int reverseNewCodeB = newCodeB + 3;
+	int reverseNewCodeC = newCodeC + 3;
+	int reverseNewCodeD = newCodeD + 3;
+
+	int decryptedCode = (1000 * reverseNewCodeA) + (100 * reverseNewCodeB) + (10 * reverseNewCodeC) + reverseNewCodeD;
+
+	System.out.printf("%nYour encrypted code is %d and your decrypted code is %d %n", encryptedCode, decryptedCode);
+
+
+	
+
 
 
 
