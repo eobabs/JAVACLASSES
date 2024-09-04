@@ -20,7 +20,7 @@ public class LargestNumber {
 
        	}
 
-        System.out.println("The largest number of the list is: " + largestNumber + number);
+        System.out.println("The largest number of the list is: " + largestNumber );
 
 
          }

@@ -5,10 +5,9 @@ public class ValidatingUserInput {
 
 	Scanner scanner = new Scanner(System.in);
 	
-	System.out.print("Enter a number: ");
-	int number = scanner.nextInt();
+	int number = -1;
 	
-	while(number != 1) {
+	while(number != 1 ) {
 
 	System.out.print("Enter a number: ");
 	number = scanner.nextInt();

@@ -9,7 +9,7 @@ public class HighestScore{
 		System.out.print("\nEnter number of students: ");
 		int numberOfStudents = scoreInput.nextInt();
 
-		int largestScore = 150;
+		int largestScore = 0;
 		String nameOfHighest = "";
 
 		for(int counter = 1; counter <= numberOfStudents; counter++){
