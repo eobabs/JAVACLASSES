@@ -20,20 +20,23 @@ public class PrivacyCryptography{
 	int newCodeC = (digitC + 7) % 10;
 	int newCodeD = (digitD + 7) % 10;
 
-	int encryptedCode = (1000 * newCodeC) + (100 * newCodeD) + (10 * newCodeA) + newCodeB;
-
-	System.out.printf("%nYour four digit integer is %d and your encrypted code is %d %n", code, encryptedCode);
+	System.out.println("Your four digit integer is " + code + " and your encrypted code is " + newCodeC + newCodeD + newCodeA + newCodeB);
 
 	//To decrypt the code
 
-	int reverseNewCodeA = newCodeA + 3;
-	int reverseNewCodeB = newCodeB + 3;
-	int reverseNewCodeC = newCodeC + 3;
-	int reverseNewCodeD = newCodeD + 3;
+	int reverseNewCodeA = newCodeA - 7;
+	int reverseNewCodeB = newCodeB - 7;
+	int reverseNewCodeC = newCodeC - 7;
+	int reverseNewCodeD = newCodeD - 7;
 
-	int decryptedCode = (1000 * reverseNewCodeA) + (100 * reverseNewCodeB) + (10 * reverseNewCodeC) + reverseNewCodeD;
+	if (reverseNewCodeA < 0) reverseNewCodeA = reverseNewCodeA + 10;
+	if (reverseNewCodeB < 0) reverseNewCodeB = reverseNewCodeB + 10;
+	if (reverseNewCodeC < 0) reverseNewCodeC = reverseNewCodeC + 10;
+	if (reverseNewCodeD < 0) reverseNewCodeD = reverseNewCodeD + 10;
 
-	System.out.printf("%nYour encrypted code is %d and your decrypted code is %d %n", encryptedCode, decryptedCode);
+	int decryptedCode = reverseNewCodeA * 1000 + reverseNewCodeB * 100 + reverseNewCodeC * 10 + reverseNewCodeD;
+
+	System.out.println("\nUpon decryption " +  reverseNewCodeA + reverseNewCodeB + reverseNewCodeC + reverseNewCodeD);
 
 
 	
