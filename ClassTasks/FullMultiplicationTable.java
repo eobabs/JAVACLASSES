@@ -8,7 +8,7 @@ public class FullMultiplicationTable{
 	
 	for (int counter = 1; counter <= 9; counter++){
 
-	System.out.print(counter + "*" + count + "=" + counter * count + "       ");
+	System.out.printf("%d * %d = %d \t", counter, count, counter * count );
 
 
 	}

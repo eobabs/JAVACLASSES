@@ -8,7 +8,7 @@ public class DivisibleBy3And4{
 
 				if (count % 3 == 0 && count % 4 == 0) {
 
-					System.out.println(count + " ");
+					System.out.print(count + " ");
 					lineCounter++;
 
                				 if (lineCounter == 10) { 

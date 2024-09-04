@@ -11,9 +11,9 @@ public class PrivacyCryptography{
 	int code = encrypt.nextInt();
 
 	int digitA = code/1000;
-	int digitB = (code/100)%10;
-	int digitC = (code/10)%10;
-	int digitD = code%10;
+	int digitB = (code/100) % 10;
+	int digitC = (code/10) % 10;
+	int digitD = code % 10;
 
 	int newCodeA = (digitA + 7) % 10;
 	int newCodeB = (digitB + 7) % 10;
