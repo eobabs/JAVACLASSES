@@ -10,7 +10,8 @@ public class ChristmasSong{
        	int christmasSongs = songs.nextInt();
 
 	        switch (christmasSongs) {
-            		case 12 : System.out.println("Twelve drummers drumming,");        	    			case 11 : System.out.println("Eleven pipers piping,");
+            		case 12 : System.out.println("Twelve drummers drumming,");
+			case 11 : System.out.println("Eleven pipers piping,");
             		case 10 : System.out.println("Ten lords a-leaping,");
             		case 9 : System.out.println("Nine ladies dancing,");
             		case 8 : System.out.println("Eight maids a-milking,");
