@@ -18,7 +18,7 @@ public class PrimeNumberMethod{
 			counter++;
 			if (counter % 8 == 0)
 			System.out.println(number + " ");
-			
+			else System.out.print(number + " ");
 			}
 		number++;
 		}
