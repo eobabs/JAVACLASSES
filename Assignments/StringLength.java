@@ -9,8 +9,6 @@ public class StringLength{
 	System.out.print("Enter a string: ");
        	String word = input.nextLine();
 
-	
-
 	System.out.print("The length of the string is: " + word.length());
 
 	}

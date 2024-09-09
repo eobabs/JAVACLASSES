@@ -3,7 +3,7 @@ public class PrimeNumberMethod{
 
 	public static void main(String... prime){
 		System.out.print("The prime numbers between 1 and 10000 are\n");
-		printPrimeNumbers(10000);
+		printPrimeNumbers(700);
 
 	}
 
