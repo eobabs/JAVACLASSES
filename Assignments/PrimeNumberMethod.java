@@ -43,6 +43,24 @@ public class PrimeNumberMethod{
 	return counter;
 	}
 
+	public static boolean isNumberPalindrome(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+        
+        while (number != 0) {
+            int extractedValue = number % 10;
+            reversedNumber = reversedNumber * 10 + extractedValue;
+            number /= 10;
+        }
+        if (originalNumber == reversedNumber) {
+          return originalNumber == reversedNumber;         
+        } else {
+            return originalNumber == reversedNumber;
+        }
+
+	}
+
+
 
 
 
