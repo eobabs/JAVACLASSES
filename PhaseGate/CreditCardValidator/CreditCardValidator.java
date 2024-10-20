@@ -65,11 +65,7 @@ public class CreditCardValidator {
 
 		}
 			int totalSum = sum + sumTwo;
-
-
-
 		return totalSum;
-
 	}
 
 
@@ -97,8 +93,6 @@ public class CreditCardValidator {
             		extractedDigits[index] = cardNumber % 10; 
             		cardNumber /= 10;            
         	}
-
-		
 		
         	return extractedDigits;
     	}
@@ -123,11 +117,31 @@ public class CreditCardValidator {
     	public static void main(String[] args) {
         	Scanner numberToArray = new Scanner(System.in);
 
-        	System.out.println("Hello, Kindly Enter Card details to verify");
-	        long number = numberToArray.nextLong();
+		long number = 0;
 
-		if (number < 0) number = -number;
-	
+        	System.out.println("Hello, Kindly Enter Card details to verify");
+
+		while (true) {
+            		try {
+                	number = numberToArray.nextLong();
+                	if (number < 0) number = -number; 
+
+	     		int length = getCardLength(number);
+
+       				if (length < 13 || length > 16) {
+           				System.out.println("Invalid card number length. Card number must be between 13 and 16 digits.");
+            				continue;
+				}
+
+                	break; 
+            		} catch (Exception error) {
+               			System.out.println("Invalid input. Please enter a valid card details with numbers.");
+                		numberToArray.next();
+            		}
+        	}
+
+
+
         	int totalSum = checkValidity(number);
 
 		if (totalSum % 10 == 0) System.out.println("Credit Card Validity Status: Valid");
@@ -136,5 +150,5 @@ public class CreditCardValidator {
 					
 		
  	}
-}
 
+}
