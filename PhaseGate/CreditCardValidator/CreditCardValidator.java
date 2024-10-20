@@ -3,23 +3,99 @@ import java.util.Arrays;
 
 public class CreditCardValidator {
 
-   	public static long[] extractDigits(long number) {
+	public static int checkValidity(long cardNumber){
+		
+		long [] cardDigits = extractDigits(cardNumber);
+	
+		int length = cardDigits.length; 
 
-		if (number < 0) number = number * -1;
+		System.out.println("Credit Card Type: " + getCardType(cardNumber));
+
+		System.out.print("Credit Card Digits: ");
+		for (long digits:cardDigits) System.out.print(digits);
+
+		System.out.println("\nCredit Card Digit Length: " + length);
+
+		int totalSum;
+		
+		if (length % 2 == 0) totalSum = getTotalCaseOne(cardDigits);
+		else totalSum = getTotalCaseTwo(cardDigits);
+
+		return totalSum;
+
+	}
+
+	public static int getTotalCaseOne(long [] card){ 
+		
+		int sum = 0;
+		int sumTwo = 0;
+
+		for (int index = 0; index < card.length; index++){
+
+			if (index % 2 == 1) sum += card[index];
+			
+			if (index % 2 == 0){
+				long product = 2 * card[index];
+				if (product > 9) product -= 9;
+				sumTwo += product;
+			}
+
+		}
+			int totalSum = sum + sumTwo;
+
+		
+		return totalSum;
+
+	}
+
+	public static int getTotalCaseTwo(long [] card){ 
+		
+		int sum = 0;
+		int sumTwo = 0;
+
+		for (int index = 0; index < card.length; index++){
+
+			if (index % 2 == 0) sum += card[index];
+			
+			if (index % 2 == 1){
+				long product = 2 * card[index];
+				if (product > 9) product -= 9;
+				sumTwo += product;
+			}
+
+		}
+			int totalSum = sum + sumTwo;
+
+
+
+		return totalSum;
+
+	}
+
+
+	public static int getCardLength(long cardNumber){
         
 	        int counter = 0;
-        	long temp = number;
+        	long temp = cardNumber;
 
         	while (temp > 0) {
             		temp /= 10;
             		counter++;
         	}
 
-        	long[] extractedDigits = new long[counter];
+		return counter;
+		
+	}
 
-        	for (int index = counter - 1; index >= 0; index--) {
-            		extractedDigits[index] = number % 10; 
-            		number /= 10;            
+   	public static long[] extractDigits(long cardNumber) {
+
+		int length = getCardLength(cardNumber);
+
+        	long[] extractedDigits = new long[length];
+
+        	for (int index = length - 1; index >= 0; index--) {
+            		extractedDigits[index] = cardNumber % 10; 
+            		cardNumber /= 10;            
         	}
 
 		
@@ -42,20 +118,23 @@ public class CreditCardValidator {
 		}else{		
 			return "Unknown Card";	
 		}
-
-		
 	}
 
     	public static void main(String[] args) {
         	Scanner numberToArray = new Scanner(System.in);
 
-        	System.out.print("Enter a number: ");
+        	System.out.println("Hello, Kindly Enter Card details to verify");
 	        long number = numberToArray.nextLong();
-	
-        	System.out.println("List of Digits: ");
 
-		System.out.println(Arrays.toString(extractDigits(number)));
-		System.out.print(getCardType(number));
+		if (number < 0) number = -number;
+	
+        	int totalSum = checkValidity(number);
+
+		if (totalSum % 10 == 0) System.out.println("Credit Card Validity Status: Valid");
+		else System.out.println("Credit Card Validity Status: Invalid");
+		
+					
+		
  	}
 }
 
