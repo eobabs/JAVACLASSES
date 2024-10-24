@@ -32,7 +32,7 @@ public class MenstrualCycleTrackerTest {
 	}
 
 	@Test
-	public void testGetDateformat() {
+	public void testGetDateFormat() {
 		long millis = 1696118400000L;
 		String formattedDate = MenstrualCycleTracker.getDateformat(millis);
 		assertEquals("2023-10-01", formattedDate);
