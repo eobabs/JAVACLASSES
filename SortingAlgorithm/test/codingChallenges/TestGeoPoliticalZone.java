@@ -8,7 +8,7 @@ public class TestGeoPoliticalZone {
 
     @Test
     public void testThatStateCanBeFound() {
-        String stateToCheck = "Taraba";
+        String stateToCheck = "TARABA";
 
         String expected = GeoPoliticalZoneTest.checkGeoPolZone(stateToCheck);
 

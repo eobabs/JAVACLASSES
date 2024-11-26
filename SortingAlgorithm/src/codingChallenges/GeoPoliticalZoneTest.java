@@ -17,7 +17,7 @@ public class GeoPoliticalZoneTest {
             String expected = "Unknown State";
             for (GeoPoliticalZone state : GeoPoliticalZone.values() ) {
                 for (String result : state.getStates()) {
-                    if (result.equals(stateToCheck)) {
+                    if (result.equalsIgnoreCase(stateToCheck)) {
                         expected = state.name();
                         return expected;
                     }
