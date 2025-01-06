@@ -4,9 +4,9 @@ public class Account {
     private String name;
     private double balance;
     private String pinCode;
-    private int number;
+    private String number;
 
-    public Account(String name, String pinCode, int number) {
+    public Account(String name, String pinCode, String number) {
         this.name = name;
         this.pinCode = pinCode;
         this.number = number;
@@ -21,7 +21,7 @@ public class Account {
         return balance;
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return number;
     }
 
@@ -35,7 +35,6 @@ public class Account {
         validateAmount(amount);
         validateWithdrawal(amount);
         this.balance -= amount;
-
     }
 
     private void validateWithdrawal(double amount) {
@@ -54,5 +53,9 @@ public class Account {
         if (amount < 0) {
             throw new IllegalArgumentException("Amount must be a positive number");
         }
+    }
+
+    public String getPinCode() {
+        return pinCode;
     }
 }
